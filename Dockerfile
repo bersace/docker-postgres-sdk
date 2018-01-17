@@ -1,6 +1,8 @@
 FROM debian:buster-slim
 
+ADD https://github.com/vishnubob/wait-for-it/raw/master/wait-for-it.sh /usr/local/bin/
 RUN set -eux; \
+    chmod +x /usr/local/bin/wait-for-it.sh; \
     apt-get update -y; \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         curl \
